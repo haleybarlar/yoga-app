@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Item, Button } from 'semantic-ui-react'
+import { Image, Item, Button, List, Divider, Container } from 'semantic-ui-react'
 
 class IndexPoseCard extends Component {
 
@@ -20,18 +20,19 @@ class IndexPoseCard extends Component {
   render() {
 
     return (
-      <Item.Group>
-        <Item>
-          <Item.Image size='tiny' src={this.props.pose.attributes.image} />
-          <Item.Content>
-            <Item.Header>{this.props.pose.attributes.sanskrit} ({this.props.pose.attributes.english})</Item.Header>
-            {this.state.clicked === true ? <Item.Meta>Ya added it</Item.Meta> : null}
 
-            <br></br>
-            <Button onClick={this.handleClick}>Add to Class</Button>
-          </Item.Content>
-        </Item>
-      </Item.Group>
+      <List divided verticalAlign='middle'>
+        <List.Item>
+          <List.Content floated='right'>
+            <Button onClick={this.handleClick}>Add to class</Button>
+          </List.Content>
+          <Image avatar src={this.props.pose.attributes.image} />
+          <List.Content>{this.props.pose.attributes.sanskrit} ({this.props.pose.attributes.english})</List.Content>
+          {this.state.clicked === true ? <Item.Meta>Ya added it</Item.Meta> : null}
+        </List.Item>
+      <Divider />
+      </List>
+
     )
   }
 }

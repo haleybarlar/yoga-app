@@ -5,7 +5,6 @@ import PoseIndex from './PoseIndex.js'
 import ClassDisplay from './ClassDisplay.js'
 import { Route, NavLink, HashRouter, Switch, Link } from "react-router-dom";
 import './HomeContainer.css'
-
 import { Button } from 'semantic-ui-react'
 
 class HomeContainer extends Component {
@@ -15,7 +14,7 @@ class HomeContainer extends Component {
     return (
       <div className="background">
 
-        <Link to="/student/studentform">
+        <Link to="/student/index">
           <Button size="huge">STUDENT</Button>
           <Button size="huge">TEACHER</Button>
         </Link>

@@ -1,0 +1,14 @@
+.display-div {
+    width: 100%;
+    height: 800px;
+    background-image: url('http://pilatesandyogafitness.com/wp-content/uploads/2018/08/ashtanga-yoga.jpg') !important;
+    background-size: cover !important;
+}
+
+.main-div {
+  text-align: center;
+}
+
+div.ui.card {
+  margin: 0 auto;
+}

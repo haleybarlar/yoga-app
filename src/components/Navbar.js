@@ -11,7 +11,7 @@ import { Route, NavLink, HashRouter, Switch } from "react-router-dom";
 class Navbar extends Component {
 
   state = {
-    activeItem: 'home'
+    activeItem: ''
   }
 
   handleItemClick = (event, { name }) => {
@@ -26,7 +26,7 @@ class Navbar extends Component {
     return (
       <div>
         <Menu secondary>
-          <Menu.Item name='Home' active={activeItem === 'home'} onClick={this.handleItemClick} as={NavLink} to="/"/>
+          <Menu.Item exact name='Home' active={activeItem === 'home'} onClick={this.handleItemClick} as={NavLink} to="/"/>
           <Menu.Item name='All Poses' active={activeItem === 'allposes'} onClick={this.handleItemClick} as={NavLink} to="/student/index"/>
           <Menu.Item name='My Class' active={activeItem === 'myclass'} onClick={this.handleItemClick} as={NavLink} to="/student/class"/>
           <Menu.Item name='Display Poses' active={activeItem === 'display'} onClick={this.handleItemClick} as={NavLink} to="/student/display"/>

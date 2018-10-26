@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Item, Button } from 'semantic-ui-react'
+import { Image, Item, Button, List, Divider } from 'semantic-ui-react'
 
 class MyClassPoseCard extends Component {
 
@@ -12,20 +12,19 @@ class MyClassPoseCard extends Component {
   }
 
   render() {
-    console.log(this.props.pose);
 
     return (
-      <Item.Group>
-        <Item>
-          <Item.Image size='tiny' src={this.props.pose.attributes.image} />
-          <Item.Content>
-            <Item.Header>{this.props.pose.attributes.sanskrit} ({this.props.pose.attributes.english})</Item.Header>
-            {/*<Item.Meta>Description</Item.Meta>*/}
-            <br></br>
+
+      <List divided verticalAlign='middle'>
+        <List.Item>
+          <List.Content floated='right'>
             <Button onClick={this.removePose}>Remove</Button>
-          </Item.Content>
-        </Item>
-      </Item.Group>
+          </List.Content>
+          <Image avatar src={this.props.pose.attributes.image} />
+          <List.Content>{this.props.pose.attributes.sanskrit} ({this.props.pose.attributes.english})</List.Content>
+        </List.Item>
+      <Divider />
+      </List>
     )
   }
 }

@@ -12,3 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+div.ui.fluid.selection.dropdown {
+  width: 128px;
+}
+
+div.ui.container.index-container {
+  width: 52% !important;
+  height: 100%;
+  overflow: scroll;
+}

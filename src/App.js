@@ -21,7 +21,8 @@ class App extends Component {
     fetch('http://localhost:3000/api/v1/poses')
     .then(resp => resp.json())
     .then(data => this.setState ({
-      poses: data.data
+      poses: data.data,
+      filteredPoses: data.data
     }))
   }
 
@@ -39,6 +40,27 @@ class App extends Component {
     }
   }
 
+  addNewPose = (pose, img) => {
+
+    let data = {
+      sanskrit: pose,
+      image: img
+    }
+
+    fetch('http://localhost:3000/api/v1/poses', {
+    method: "POST",
+    headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+    body: JSON.stringify(data)
+    })
+    .then(resp => resp.json())
+    .then(data => this.setState ({
+      poses: data.data,
+      filteredPoses: data.data
+    }))
+  }
+
   render() {
 
     return (
@@ -48,7 +70,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomeContainer}/>
             <Route exact path="/index" render={() => < PoseIndex poses={this.state.poses} />} />
-            <Route path="/student" render={() => < Student poses={this.state.poses} handleChange={this.handleChange} filteredPoses={this.state.filteredPoses}/>} />
+            <Route path="/student" render={() => < Student poses={this.state.poses} handleChange={this.handleChange} filteredPoses={this.state.filteredPoses} addNewPose={this.addNewPose}/>} />
           </Switch>
       </div>
     )

@@ -43,8 +43,8 @@ class Student extends Component {
 
         <Switch>
           <Route path="/student/class" render={() => <MyClass favoritePoses={this.state.favoritePoses} removePose={this.removePose}/>} />
-          <Route path="/student/index" render={() => <PoseIndex poses={this.props.poses} addToFavorite={this.addToFavorite} handleChange={this.props.handleChange} filteredPoses={this.props.filteredPoses}/>} />
-          <Route path="/student/display" render={() => <ClassDisplay poses={this.props.poses} />} />
+          <Route path="/student/index" render={() => <PoseIndex poses={this.props.poses} addToFavorite={this.addToFavorite} handleChange={this.props.handleChange} filteredPoses={this.props.filteredPoses} addNewPose={this.props.addNewPose}/>} />
+          <Route path="/student/display" render={() => <ClassDisplay poses={this.props.poses} favoritePoses={this.state.favoritePoses}/>} />
           <Route path="/display" render={() => <ClassDisplay poses={this.state.poses} />} />
           <Route path="/student/studentform" render={() => <StudentForm />} />
         </Switch>
