@@ -1,14 +1,66 @@
 .display-div {
-    width: 100%;
-    height: 800px;
-    background-image: url('http://pilatesandyogafitness.com/wp-content/uploads/2018/08/ashtanga-yoga.jpg') !important;
-    background-size: cover !important;
+  width: 100%;
+  height: 800px;
+  background-image: url('http://pilatesandyogafitness.com/wp-content/uploads/2018/08/ashtanga-yoga.jpg') !important;
+  background-size: cover !important;
 }
 
 .main-div {
   text-align: center;
+  margin-left: 20%;
 }
 
 div.ui.card {
   margin: 0 auto;
 }
+
+div.div-display {
+  position: absolute;
+  margin-top: 7%;
+  margin-left: 38%;
+}
+
+div.slider-wrapper.axis-horizontal {
+  width: 90%;
+  height: 500px;
+}
+
+img.carousel-img {
+  background: white;
+  width: 44%;
+}
+
+.carousel .slide img {
+  width: 80%;
+}
+
+div.carousel.carousel-slider {
+  position: absolute;
+  margin-left: -42px;
+  margin-top: -4%;
+  height: 521px;
+}
+
+ul.thumbs.animated {
+  margin-top: 75%;
+  margin-left: -26%;
+}
+
+p.legend {
+  bottom: 480px !important;
+  color: black !important;
+  background: white !important;
+  opacity: 1 !important;
+  font-family: 'Oxygen', sans-serif !important;
+  font-weight: 200 !important;
+  font-size: 38px !important;
+}
+
+button.control-arrow {
+  height: 500px !important;
+}
+
+/* div.ui.scrolling.modal.transition.visible {
+  width: 45%;
+  height: 611px;
+} */

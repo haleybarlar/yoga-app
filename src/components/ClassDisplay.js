@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import DisplayPoseCard from './DisplayPoseCard'
 import './ClassDisplay.css'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+import { Link } from "react-router-dom";
 
 class ClassDisplay extends Component {
 
@@ -12,50 +14,32 @@ class ClassDisplay extends Component {
   }
 
   componentDidMount() {
-    this.setState({poses: this.props.poses, currentPose: this.props.favoritePoses[0]})
-
-    this.interval = setInterval(() => {
-      if (this.state.counter < 49){
-        this.setState({
-          counter: this.state.counter + 1,
-          currentPose: this.props.favoritePoses[this.state.counter]
-        })
-      } else {
-        this.setState({
-          counter: 0
-        })
-      }
-    }, 7000)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  moveForward = (event) => {
     this.setState({
-      counter: this.state.counter + 1
-    })
-  }
-
-  moveBackward = (event) => {
-    this.setState({
-      counter: this.state.counter - 1
+      poses: this.props.poses,
+      currentPose: this.props.favoritePoses[0]
     })
   }
 
   render() {
-    if (this.state.poses !== null && this.state.poses !== undefined) {
-      return (
-        <div className="display-div">
-          <div className="main-div">
-            <DisplayPoseCard pose={this.state.currentPose} moveForward={this.moveForward} moveBackward={this.moveBackward} pause={this.pause}/>
-          </div>
-        </div>
-      )
-    }
+    if (this.props.poses) {
+    return (
+      <div className="main-div">
+        {this.props.favoritePoses && this.props.favoritePoses.length > 0 ?
+          <Carousel
+            showStatus={false}
+            width={600}
+            autoPlay={true}
+            interval={1000}
+          >
+           {this.props.favoritePoses.map(pose => <div><img className="carousel-img" alt="#" src={pose.attributes.image}/><p className="legend">{pose.attributes.sanskrit}</p></div>)}
+         </Carousel>
+         :
+         <h3>Add some <Link to="/student/index">poses</Link> to your class!</h3>
+        }
+      </div>
+    )
   }
-}
+}}
 
 
 export default ClassDisplay

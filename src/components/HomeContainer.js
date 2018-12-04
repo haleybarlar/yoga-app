@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import Student from './Student.js'
-import StudentForm from './StudentForm.js'
-import PoseIndex from './PoseIndex.js'
-import ClassDisplay from './ClassDisplay.js'
-import { Route, NavLink, HashRouter, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './HomeContainer.css'
 import { Button } from 'semantic-ui-react'
 
@@ -13,10 +9,10 @@ class HomeContainer extends Component {
   render() {
     return (
       <div className="background">
-
+        <h1 id="yoga-cycle">Yoga Cycle</h1>
+        <h1>Select poses and generate sequences</h1>
         <Link to="/student/index">
-          <Button size="huge">STUDENT</Button>
-          <Button size="huge">TEACHER</Button>
+          <Button size="huge">Let's go</Button>
         </Link>
 
       </div>

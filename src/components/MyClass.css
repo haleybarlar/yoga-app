@@ -1,0 +1,11 @@
+div.ui.container.index-container {
+  margin-top: 1%;
+}
+
+div#myclass.ui.container.index-container {
+  text-align: center;
+}
+
+div#pose-card {
+  text-align: left;
+}

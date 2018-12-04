@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import Student from './Student.js'
-import StudentForm from './StudentForm.js'
-import PoseIndex from './PoseIndex.js'
-import HomeContainer from './HomeContainer.js'
-import MyClass from './MyClass.js'
-import { Button, Dropdown, Menu } from 'semantic-ui-react'
-import { Route, NavLink, HashRouter, Switch } from "react-router-dom";
+import { Menu } from 'semantic-ui-react'
+import { NavLink } from "react-router-dom";
 
 
 class Navbar extends Component {
@@ -29,7 +24,6 @@ class Navbar extends Component {
           <Menu.Item exact name='Home' active={activeItem === 'home'} onClick={this.handleItemClick} as={NavLink} to="/"/>
           <Menu.Item name='All Poses' active={activeItem === 'allposes'} onClick={this.handleItemClick} as={NavLink} to="/student/index"/>
           <Menu.Item name='My Class' active={activeItem === 'myclass'} onClick={this.handleItemClick} as={NavLink} to="/student/class"/>
-          <Menu.Item name='Display Poses' active={activeItem === 'display'} onClick={this.handleItemClick} as={NavLink} to="/student/display"/>
         </Menu>
       </div>
     )

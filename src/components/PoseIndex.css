@@ -12,3 +12,29 @@ div.ui.fluid.selection.dropdown {
 div.header {
   text-align: center;
 }
+
+div.ui.container.index-container {
+  max-height: 385px !important;
+  background: rgba(255,255,255, 0.8);
+  border-radius: 12px;
+}
+
+div.fields {
+  margin-left: 37%;
+}
+
+div.ui.icon.input {
+  width: 14%;
+  margin-left: 51%;
+  position: absolute;
+}
+
+div.ui.fluid.selection.dropdown {
+  width: 14%;
+  margin-left: 36%;
+}
+
+div.button-div {
+  margin-left: 44%;
+  margin-top: 1%;
+}

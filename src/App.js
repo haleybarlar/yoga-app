@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import Student from './components/Student.js'
-import StudentForm from './components/StudentForm.js'
 import PoseIndex from './components/PoseIndex.js'
 import HomeContainer from './components/HomeContainer.js'
 import Navbar from './components/Navbar.js'
-import MyClass from './components/MyClass.js'
-import { Button, Dropdown, Menu } from 'semantic-ui-react'
-import { Route, NavLink, HashRouter, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 
 class App extends Component {
@@ -29,7 +26,21 @@ class App extends Component {
   handleChange = (event, value) => {
     const newArray = [...this.state.poses]
     const filteredPoses = newArray.filter(pose => pose.attributes.level.includes(value.toLowerCase().toString()))
-    if (value === undefined) {
+    if (value === undefined || value === "BeginnerBeginnerIntermediateAdvanced") {
+      this.setState({
+        poses: newArray
+      })
+    } else {
+      this.setState({
+        filteredPoses: filteredPoses
+      })
+    }
+  }
+
+  handleSearch = (event, value) => {
+    const newArray = [...this.state.poses]
+    const filteredPoses = newArray.filter(pose => pose.attributes.sanskrit.toLowerCase().includes(value.toLowerCase()))
+    if (value === undefined || value === "") {
       this.setState({
         poses: newArray
       })
@@ -70,7 +81,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomeContainer}/>
             <Route exact path="/index" render={() => < PoseIndex poses={this.state.poses} />} />
-            <Route path="/student" render={() => < Student poses={this.state.poses} handleChange={this.handleChange} filteredPoses={this.state.filteredPoses} addNewPose={this.addNewPose}/>} />
+            <Route path="/student" render={() => < Student poses={this.state.poses} handleChange={this.handleChange} filteredPoses={this.state.filteredPoses} addNewPose={this.addNewPose} handleSearch={this.handleSearch}/>} />
           </Switch>
       </div>
     )

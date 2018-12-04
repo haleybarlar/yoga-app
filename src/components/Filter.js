@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
-import StudentForm from './StudentForm.js'
-import PoseIndex from './PoseIndex.js'
-import HomeContainer from './HomeContainer.js'
-import MyClass from './MyClass.js'
-import { Button, Dropdown, Menu } from 'semantic-ui-react'
-import { Route, NavLink, HashRouter, Switch } from "react-router-dom";
+import React, { Component } from 'react'
+import { Dropdown } from 'semantic-ui-react'
 
 
 class Filter extends Component {
@@ -37,9 +32,7 @@ class Filter extends Component {
     ]
 
     return (
-      <div>
-        <Dropdown placeholder='Level' fluid selection options={levelOptions} onChange={this.handleChange}/>
-      </div>
+      <Dropdown placeholder='Find by level' fluid selection options={levelOptions} onChange={this.handleChange}/>
     )
   }
 }

@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { Image, Item, Button, Icon, Card } from 'semantic-ui-react'
+import { Image, Button, Icon, Card } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 
 class DisplayPoseCard extends Component {
+
   render() {
-    if(this.props.pose === null) {
-      return <h3>Add some <Link to="/student/index">poses</Link> to your class!</h3>
-    } else if (this.props.pose === undefined) {
+
+    if(!this.props.pose) {
       return <h3>Add some <Link to="/student/index">poses</Link> to your class!</h3>
     } else {
       return (
-        <div>
+        <div className="div-display">
           <Card>
             <Image src={this.props.pose.attributes.image} />
             <Card.Content>
