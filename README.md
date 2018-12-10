@@ -1,3 +1,3 @@
-<h1>Hi</h1>
+<h1>Yoga Cycle</h1>
 
   - [Continuous Integration](#continuous-integration)
